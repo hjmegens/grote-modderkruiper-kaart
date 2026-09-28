@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_25b6072b1984fe628f0595094839f763 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_25b6072b1984fe628f0595094839f763" ></div>
+        
+    
+    <div style="position: fixed;
+         top: 12px; left: 50px; width: 250px; z-index:9999;
+         background-color: white; border:2px solid #444; border-radius:8px;
+         padding: 12px 14px; box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+         font-family: Arial, sans-serif; font-size: 14px;">
+      <div style="font-size: 18px; font-weight: 700; line-height: 1.1; margin-bottom: 4px;">
+        Samplinglocaties grote modderkruiper
+      </div>
+      <div style="font-size: 16px; font-style: italic; margin-bottom: 10px;">
+        (Misgurnus fossilis)
+      </div>
+      <div style="font-size: 16px; font-weight: 700; margin-bottom: 6px;">Groep</div>
+      <div><span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#d73027; border:1px solid #111; margin-right:8px;"></span>RAVON (n=111)</div>
+      <div><span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#2b6cb0; border:1px solid #111; margin-right:8px;"></span>Aa en Maas (n=87)</div>
+      <div><span style="display:inline-block; width:14px; height:14px; border-radius:50%; background:#2f855a; border:1px solid #111; margin-right:8px;"></span>INBO (n=85)</div>
+      <div style="margin-top:10px; font-size:12px; color:#333;">
+        Marker grootte = aantal samples op coördinaat.<br>
+        Klik op een marker voor details.
+      </div>
+    </div>
+    
+</body>
+<script>
+    
+    
+            var map_25b6072b1984fe628f0595094839f763 = L.map(
+                "map_25b6072b1984fe628f0595094839f763",
+                {
+                    center: [51.739732675306115, 5.345452398061226],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 8,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_25b6072b1984fe628f0595094839f763);
+
+            
+
+        
+    
+            var tile_layer_d1e648f6dafa81e14f08dbb4b8afcb34 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_d1e648f6dafa81e14f08dbb4b8afcb34.addTo(map_25b6072b1984fe628f0595094839f763);
+        
+    
+            var feature_group_49df0a0ef6513bde506554fcdb18dafb = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_461217154daa43299cd8be72c7c64015 = L.circleMarker(
+                [51.957132, 4.986838],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.799999999999999, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_43ab71f0937df28e0473e657a2a691f3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a9c732c3a739c0566c2d864beb77ff80 = $(`<div id="html_a9c732c3a739c0566c2d864beb77ff80" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 9<br>             <b>Coördinaat:</b> 51.957132, 4.986838<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Zouweboezem<br>             <b>Gemeente(n):</b> Lexmond             </div>`)[0];
+                popup_43ab71f0937df28e0473e657a2a691f3.setContent(html_a9c732c3a739c0566c2d864beb77ff80);
+            
+        
+
+        circle_marker_461217154daa43299cd8be72c7c64015.bindPopup(popup_43ab71f0937df28e0473e657a2a691f3)
+        ;
+
+        
+    
+    
+            circle_marker_461217154daa43299cd8be72c7c64015.bindTooltip(
+                `<div>
+                     RAVON | n=9 | 51.95713, 4.98684
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_03b0d7806e8fbb2ca7e4ddc8bcf15208 = L.circleMarker(
+                [51.957291, 4.984482],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_65a9f3a0c42e2637accbad050286d65d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_55aa7c6516fbf44f3f49d58417aaad02 = $(`<div id="html_55aa7c6516fbf44f3f49d58417aaad02" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 2<br>             <b>Coördinaat:</b> 51.957291, 4.984482<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Zouweboezem<br>             <b>Gemeente(n):</b> Lexmond             </div>`)[0];
+                popup_65a9f3a0c42e2637accbad050286d65d.setContent(html_55aa7c6516fbf44f3f49d58417aaad02);
+            
+        
+
+        circle_marker_03b0d7806e8fbb2ca7e4ddc8bcf15208.bindPopup(popup_65a9f3a0c42e2637accbad050286d65d)
+        ;
+
+        
+    
+    
+            circle_marker_03b0d7806e8fbb2ca7e4ddc8bcf15208.bindTooltip(
+                `<div>
+                     RAVON | n=2 | 51.95729, 4.98448
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ef9613d11a44e482d3743a6d01d7ac5 = L.circleMarker(
+                [51.99867, 5.37914],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_373cc606c4fe8804e5ccb94f3bafab3b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a2caa8ff0bfca0c703c23d477f9295f2 = $(`<div id="html_a2caa8ff0bfca0c703c23d477f9295f2" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 1<br>             <b>Coördinaat:</b> 51.998670, 5.379140<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Staatsbosbeheer terrein<br>             <b>Gemeente(n):</b> Langbroek             </div>`)[0];
+                popup_373cc606c4fe8804e5ccb94f3bafab3b.setContent(html_a2caa8ff0bfca0c703c23d477f9295f2);
+            
+        
+
+        circle_marker_4ef9613d11a44e482d3743a6d01d7ac5.bindPopup(popup_373cc606c4fe8804e5ccb94f3bafab3b)
+        ;
+
+        
+    
+    
+            circle_marker_4ef9613d11a44e482d3743a6d01d7ac5.bindTooltip(
+                `<div>
+                     RAVON | n=1 | 51.99867, 5.37914
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_68d49149a77807dfa8140b319b7bce9b = L.circleMarker(
+                [52.008339, 5.116149],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_1811d49b955b891ba00ea9e0033bd732 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_8ed502070ca2f8e3e629d242b11823d0 = $(`<div id="html_8ed502070ca2f8e3e629d242b11823d0" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 2<br>             <b>Coördinaat:</b> 52.008339, 5.116149<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Klooster, Achterweg/A27<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_1811d49b955b891ba00ea9e0033bd732.setContent(html_8ed502070ca2f8e3e629d242b11823d0);
+            
+        
+
+        circle_marker_68d49149a77807dfa8140b319b7bce9b.bindPopup(popup_1811d49b955b891ba00ea9e0033bd732)
+        ;
+
+        
+    
+    
+            circle_marker_68d49149a77807dfa8140b319b7bce9b.bindTooltip(
+                `<div>
+                     RAVON | n=2 | 52.00834, 5.11615
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7f5aa45f4e6bd95315f8fbfb8d1de422 = L.circleMarker(
+                [52.011215, 5.581781],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_e4434a7ae05b6e45af02a97165c1a7f7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_482a3f530842f10e82caac92af9d9ea2 = $(`<div id="html_482a3f530842f10e82caac92af9d9ea2" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 1<br>             <b>Coördinaat:</b> 52.011215, 5.581781<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Binnenveld/De Hel<br>             <b>Gemeente(n):</b> Veenendaal             </div>`)[0];
+                popup_e4434a7ae05b6e45af02a97165c1a7f7.setContent(html_482a3f530842f10e82caac92af9d9ea2);
+            
+        
+
+        circle_marker_7f5aa45f4e6bd95315f8fbfb8d1de422.bindPopup(popup_e4434a7ae05b6e45af02a97165c1a7f7)
+        ;
+
+        
+    
+    
+            circle_marker_7f5aa45f4e6bd95315f8fbfb8d1de422.bindTooltip(
+                `<div>
+                     RAVON | n=1 | 52.01121, 5.58178
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_af6a9581dd2279220fadf1c50ef80ea9 = L.circleMarker(
+                [52.015236, 5.281838],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_a754bbb12758e932fd05d016772366b0 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_99abf0337d3860665380496c895cf59c = $(`<div id="html_99abf0337d3860665380496c895cf59c" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 1<br>             <b>Coördinaat:</b> 52.015236, 5.281838<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Sloot net buiten Bijzonder Bos<br>             <b>Gemeente(n):</b> Driebergen-Rijsenburg             </div>`)[0];
+                popup_a754bbb12758e932fd05d016772366b0.setContent(html_99abf0337d3860665380496c895cf59c);
+            
+        
+
+        circle_marker_af6a9581dd2279220fadf1c50ef80ea9.bindPopup(popup_a754bbb12758e932fd05d016772366b0)
+        ;
+
+        
+    
+    
+            circle_marker_af6a9581dd2279220fadf1c50ef80ea9.bindTooltip(
+                `<div>
+                     RAVON | n=1 | 52.01524, 5.28184
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d1c00c46a93d9636699ed0c256a1d9ea = L.circleMarker(
+                [52.015777, 5.5736],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_72658615f95c045982a903eb32e93ed8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6148a8eb5d3fceb9e37c1d34f6cefeb8 = $(`<div id="html_6148a8eb5d3fceb9e37c1d34f6cefeb8" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 8<br>             <b>Coördinaat:</b> 52.015777, 5.573600<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Binnenveld/De Hel<br>             <b>Gemeente(n):</b> Veenendaal             </div>`)[0];
+                popup_72658615f95c045982a903eb32e93ed8.setContent(html_6148a8eb5d3fceb9e37c1d34f6cefeb8);
+            
+        
+
+        circle_marker_d1c00c46a93d9636699ed0c256a1d9ea.bindPopup(popup_72658615f95c045982a903eb32e93ed8)
+        ;
+
+        
+    
+    
+            circle_marker_d1c00c46a93d9636699ed0c256a1d9ea.bindTooltip(
+                `<div>
+                     RAVON | n=8 | 52.01578, 5.57360
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c91197e7089463a095d5b8e907ca5cc9 = L.circleMarker(
+                [52.01723, 5.573509],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_7e313d63ac527c7ab79efa00047659c3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d766bb6c9bd3966096eecd7ab5ef9d83 = $(`<div id="html_d766bb6c9bd3966096eecd7ab5ef9d83" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 4<br>             <b>Coördinaat:</b> 52.017230, 5.573509<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Binnenveld/De Hel<br>             <b>Gemeente(n):</b> Veenendaal             </div>`)[0];
+                popup_7e313d63ac527c7ab79efa00047659c3.setContent(html_d766bb6c9bd3966096eecd7ab5ef9d83);
+            
+        
+
+        circle_marker_c91197e7089463a095d5b8e907ca5cc9.bindPopup(popup_7e313d63ac527c7ab79efa00047659c3)
+        ;
+
+        
+    
+    
+            circle_marker_c91197e7089463a095d5b8e907ca5cc9.bindTooltip(
+                `<div>
+                     RAVON | n=4 | 52.01723, 5.57351
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d62377595d50e0a1e4f3eb8319b2c33 = L.circleMarker(
+                [52.026253, 5.1182],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_58ef42a32162ad2e2b818574d4be9e25 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_eb70cf221a691700becc8efee30f2afb = $(`<div id="html_eb70cf221a691700becc8efee30f2afb" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 4<br>             <b>Coördinaat:</b> 52.026253, 5.118200<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Compensatiegebied Het Klooster<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_58ef42a32162ad2e2b818574d4be9e25.setContent(html_eb70cf221a691700becc8efee30f2afb);
+            
+        
+
+        circle_marker_0d62377595d50e0a1e4f3eb8319b2c33.bindPopup(popup_58ef42a32162ad2e2b818574d4be9e25)
+        ;
+
+        
+    
+    
+            circle_marker_0d62377595d50e0a1e4f3eb8319b2c33.bindTooltip(
+                `<div>
+                     RAVON | n=4 | 52.02625, 5.11820
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4ec7bfa6291dd859f1a12b5fc9af9223 = L.circleMarker(
+                [52.026426, 5.119884],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_2b69b1c060ee3c7a05aaf2e292c5efe1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a3275ff5926509e95c9541dfbf822bb0 = $(`<div id="html_a3275ff5926509e95c9541dfbf822bb0" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 2<br>             <b>Coördinaat:</b> 52.026426, 5.119884<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Compensatiegebied Het Klooster<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_2b69b1c060ee3c7a05aaf2e292c5efe1.setContent(html_a3275ff5926509e95c9541dfbf822bb0);
+            
+        
+
+        circle_marker_4ec7bfa6291dd859f1a12b5fc9af9223.bindPopup(popup_2b69b1c060ee3c7a05aaf2e292c5efe1)
+        ;
+
+        
+    
+    
+            circle_marker_4ec7bfa6291dd859f1a12b5fc9af9223.bindTooltip(
+                `<div>
+                     RAVON | n=2 | 52.02643, 5.11988
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a9ad2a951f7d8258242467d15817194a = L.circleMarker(
+                [52.026476, 5.119472],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_d9cb60344320d20e6aa52ba41bc43d6c = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c2acd09432c9b319fde66ed46c167b0b = $(`<div id="html_c2acd09432c9b319fde66ed46c167b0b" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 5<br>             <b>Coördinaat:</b> 52.026476, 5.119472<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Compensatiegebied Het Klooster<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_d9cb60344320d20e6aa52ba41bc43d6c.setContent(html_c2acd09432c9b319fde66ed46c167b0b);
+            
+        
+
+        circle_marker_a9ad2a951f7d8258242467d15817194a.bindPopup(popup_d9cb60344320d20e6aa52ba41bc43d6c)
+        ;
+
+        
+    
+    
+            circle_marker_a9ad2a951f7d8258242467d15817194a.bindTooltip(
+                `<div>
+                     RAVON | n=5 | 52.02648, 5.11947
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b367581e9918c4ad4b8e72d8ce03a90f = L.circleMarker(
+                [52.026489, 5.119053],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_3fa0cc0193749e2da15a1a80215d52e5 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_eea2403585c3f7bdeaf61b7f87277f52 = $(`<div id="html_eea2403585c3f7bdeaf61b7f87277f52" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 5<br>             <b>Coördinaat:</b> 52.026489, 5.119053<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Compensatiegebied Het Klooster<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_3fa0cc0193749e2da15a1a80215d52e5.setContent(html_eea2403585c3f7bdeaf61b7f87277f52);
+            
+        
+
+        circle_marker_b367581e9918c4ad4b8e72d8ce03a90f.bindPopup(popup_3fa0cc0193749e2da15a1a80215d52e5)
+        ;
+
+        
+    
+    
+            circle_marker_b367581e9918c4ad4b8e72d8ce03a90f.bindTooltip(
+                `<div>
+                     RAVON | n=5 | 52.02649, 5.11905
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_37e8c4746e7f590ca5863ea26fe0aac7 = L.circleMarker(
+                [52.026866, 5.116733],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_94e04927eca67000002132f393c536e7 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_14addaef87cb0ddfe0f18d43b055299a = $(`<div id="html_14addaef87cb0ddfe0f18d43b055299a" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 1<br>             <b>Coördinaat:</b> 52.026866, 5.116733<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Compensatiegebied Het Klooster<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_94e04927eca67000002132f393c536e7.setContent(html_14addaef87cb0ddfe0f18d43b055299a);
+            
+        
+
+        circle_marker_37e8c4746e7f590ca5863ea26fe0aac7.bindPopup(popup_94e04927eca67000002132f393c536e7)
+        ;
+
+        
+    
+    
+            circle_marker_37e8c4746e7f590ca5863ea26fe0aac7.bindTooltip(
+                `<div>
+                     RAVON | n=1 | 52.02687, 5.11673
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_40bc907e16d5eb6d27a2d655850fd9c1 = L.circleMarker(
+                [52.026984, 5.116761],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_d30fc14a4eb2cb1f4a3073089fa89d80 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_76256c95e63aa7dee8bd6479c7a8a7e8 = $(`<div id="html_76256c95e63aa7dee8bd6479c7a8a7e8" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 3<br>             <b>Coördinaat:</b> 52.026984, 5.116761<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Compensatiegebied Het Klooster<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_d30fc14a4eb2cb1f4a3073089fa89d80.setContent(html_76256c95e63aa7dee8bd6479c7a8a7e8);
+            
+        
+
+        circle_marker_40bc907e16d5eb6d27a2d655850fd9c1.bindPopup(popup_d30fc14a4eb2cb1f4a3073089fa89d80)
+        ;
+
+        
+    
+    
+            circle_marker_40bc907e16d5eb6d27a2d655850fd9c1.bindTooltip(
+                `<div>
+                     RAVON | n=3 | 52.02698, 5.11676
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5f2a531e209beaa13dfbe0c81e3d06c = L.circleMarker(
+                [52.027088, 5.117715],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_37a7544f4a661c1b68475a7fa5d2fbfc = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_50d55d7223fa9b20b6f8b48df76d351d = $(`<div id="html_50d55d7223fa9b20b6f8b48df76d351d" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 1<br>             <b>Coördinaat:</b> 52.027088, 5.117715<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Compensatiegebied Het Klooster<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_37a7544f4a661c1b68475a7fa5d2fbfc.setContent(html_50d55d7223fa9b20b6f8b48df76d351d);
+            
+        
+
+        circle_marker_a5f2a531e209beaa13dfbe0c81e3d06c.bindPopup(popup_37a7544f4a661c1b68475a7fa5d2fbfc)
+        ;
+
+        
+    
+    
+            circle_marker_a5f2a531e209beaa13dfbe0c81e3d06c.bindTooltip(
+                `<div>
+                     RAVON | n=1 | 52.02709, 5.11771
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_01f13c754b543f437cae66d061917866 = L.circleMarker(
+                [52.027244, 5.116826],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_33b9cce3de61177b9a6756137002d71d = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_029836b4b7f034c1888e03dcc453da73 = $(`<div id="html_029836b4b7f034c1888e03dcc453da73" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 2<br>             <b>Coördinaat:</b> 52.027244, 5.116826<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Compensatiegebied Het Klooster<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_33b9cce3de61177b9a6756137002d71d.setContent(html_029836b4b7f034c1888e03dcc453da73);
+            
+        
+
+        circle_marker_01f13c754b543f437cae66d061917866.bindPopup(popup_33b9cce3de61177b9a6756137002d71d)
+        ;
+
+        
+    
+    
+            circle_marker_01f13c754b543f437cae66d061917866.bindTooltip(
+                `<div>
+                     RAVON | n=2 | 52.02724, 5.11683
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_aa00c080a9744538248ea7173004655f = L.circleMarker(
+                [52.02758, 5.1175],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_503125c141bc13e411beadf75280d2cf = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_476dd8bad09d2cf7769739d622d59977 = $(`<div id="html_476dd8bad09d2cf7769739d622d59977" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 1<br>             <b>Coördinaat:</b> 52.027580, 5.117500<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Compensatiegebied Het Klooster<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_503125c141bc13e411beadf75280d2cf.setContent(html_476dd8bad09d2cf7769739d622d59977);
+            
+        
+
+        circle_marker_aa00c080a9744538248ea7173004655f.bindPopup(popup_503125c141bc13e411beadf75280d2cf)
+        ;
+
+        
+    
+    
+            circle_marker_aa00c080a9744538248ea7173004655f.bindTooltip(
+                `<div>
+                     RAVON | n=1 | 52.02758, 5.11750
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9297296a563132278c7ad884f5c5b054 = L.circleMarker(
+                [52.027726, 5.117004],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_50b3cb82cd231aebb2126e06f7d91942 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_a3f30afc82a719398b0cdf232c08aa78 = $(`<div id="html_a3f30afc82a719398b0cdf232c08aa78" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 2<br>             <b>Coördinaat:</b> 52.027726, 5.117004<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Compensatiegebied Het Klooster<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_50b3cb82cd231aebb2126e06f7d91942.setContent(html_a3f30afc82a719398b0cdf232c08aa78);
+            
+        
+
+        circle_marker_9297296a563132278c7ad884f5c5b054.bindPopup(popup_50b3cb82cd231aebb2126e06f7d91942)
+        ;
+
+        
+    
+    
+            circle_marker_9297296a563132278c7ad884f5c5b054.bindTooltip(
+                `<div>
+                     RAVON | n=2 | 52.02773, 5.11700
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_63e13c44742ab2123c5ecff87ed85ebd = L.circleMarker(
+                [52.027967, 5.117039],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_9c8f1d223c5f37506929c502732c1416 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c4454c7771b324f132cfd5465cb2bc64 = $(`<div id="html_c4454c7771b324f132cfd5465cb2bc64" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 4<br>             <b>Coördinaat:</b> 52.027967, 5.117039<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Compensatiegebied Het Klooster<br>             <b>Gemeente(n):</b> Nieuwegein             </div>`)[0];
+                popup_9c8f1d223c5f37506929c502732c1416.setContent(html_c4454c7771b324f132cfd5465cb2bc64);
+            
+        
+
+        circle_marker_63e13c44742ab2123c5ecff87ed85ebd.bindPopup(popup_9c8f1d223c5f37506929c502732c1416)
+        ;
+
+        
+    
+    
+            circle_marker_63e13c44742ab2123c5ecff87ed85ebd.bindTooltip(
+                `<div>
+                     RAVON | n=4 | 52.02797, 5.11704
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_521920d2651e617f048fd20240aa9619 = L.circleMarker(
+                [52.04433, 5.16759],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_512f072d92495fb5861482270d9bd496 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_84aaa5d4e3c79efd2c3796987477cb38 = $(`<div id="html_84aaa5d4e3c79efd2c3796987477cb38" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 1<br>             <b>Coördinaat:</b> 52.044330, 5.167590<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Nieuw Wulven<br>             <b>Gemeente(n):</b> Houten             </div>`)[0];
+                popup_512f072d92495fb5861482270d9bd496.setContent(html_84aaa5d4e3c79efd2c3796987477cb38);
+            
+        
+
+        circle_marker_521920d2651e617f048fd20240aa9619.bindPopup(popup_512f072d92495fb5861482270d9bd496)
+        ;
+
+        
+    
+    
+            circle_marker_521920d2651e617f048fd20240aa9619.bindTooltip(
+                `<div>
+                     RAVON | n=1 | 52.04433, 5.16759
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_51bcce7bc2b637d2c1dbc71dbcfb472a = L.circleMarker(
+                [52.12207, 6.74161],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_562b15a642eb9db2b05f6a45ecff5708 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_145fd22ded1641eff3c4c2e09d92d792 = $(`<div id="html_145fd22ded1641eff3c4c2e09d92d792" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 17<br>             <b>Coördinaat:</b> 52.122070, 6.741610<br>             <b>Werkblad(en):</b> Misgurnus fossilis<br>             <b>Locatie(s):</b> Koffiegoot/Zandvangertje<br>             <b>Gemeente(n):</b> Haaksbergen             </div>`)[0];
+                popup_562b15a642eb9db2b05f6a45ecff5708.setContent(html_145fd22ded1641eff3c4c2e09d92d792);
+            
+        
+
+        circle_marker_51bcce7bc2b637d2c1dbc71dbcfb472a.bindPopup(popup_562b15a642eb9db2b05f6a45ecff5708)
+        ;
+
+        
+    
+    
+            circle_marker_51bcce7bc2b637d2c1dbc71dbcfb472a.bindTooltip(
+                `<div>
+                     RAVON | n=17 | 52.12207, 6.74161
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8e6ab6cb52b7aaac88ef265602ec76ea = L.circleMarker(
+                [52.686182, 6.380756],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_f3390fd5c231b96c452fbd203eb59030 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_befcfb15030740ce7b25d316c917d1b7 = $(`<div id="html_befcfb15030740ce7b25d316c917d1b7" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 5<br>             <b>Coördinaat:</b> 52.686182, 6.380756<br>             <b>Werkblad(en):</b> Mfossilis_Hoogeveen<br>             <b>Locatie(s):</b> Zuid<br>             <b>Gemeente(n):</b> -             </div>`)[0];
+                popup_f3390fd5c231b96c452fbd203eb59030.setContent(html_befcfb15030740ce7b25d316c917d1b7);
+            
+        
+
+        circle_marker_8e6ab6cb52b7aaac88ef265602ec76ea.bindPopup(popup_f3390fd5c231b96c452fbd203eb59030)
+        ;
+
+        
+    
+    
+            circle_marker_8e6ab6cb52b7aaac88ef265602ec76ea.bindTooltip(
+                `<div>
+                     RAVON | n=5 | 52.68618, 6.38076
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d079eb52dcf180402478699c1c0519de = L.circleMarker(
+                [52.68681, 6.378181],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#d73027", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_49df0a0ef6513bde506554fcdb18dafb);
+        
+    
+        var popup_85ed0d609030e63b7d1b9ef9a95edc1b = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c2c0f7ff801af5bdf3f6ae65e7fad09f = $(`<div id="html_c2c0f7ff801af5bdf3f6ae65e7fad09f" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> RAVON<br>             <b>n:</b> 30<br>             <b>Coördinaat:</b> 52.686810, 6.378181<br>             <b>Werkblad(en):</b> Mfossilis_Hoogeveen<br>             <b>Locatie(s):</b> Noord<br>             <b>Gemeente(n):</b> -             </div>`)[0];
+                popup_85ed0d609030e63b7d1b9ef9a95edc1b.setContent(html_c2c0f7ff801af5bdf3f6ae65e7fad09f);
+            
+        
+
+        circle_marker_d079eb52dcf180402478699c1c0519de.bindPopup(popup_85ed0d609030e63b7d1b9ef9a95edc1b)
+        ;
+
+        
+    
+    
+            circle_marker_d079eb52dcf180402478699c1c0519de.bindTooltip(
+                `<div>
+                     RAVON | n=30 | 52.68681, 6.37818
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_49df0a0ef6513bde506554fcdb18dafb.addTo(map_25b6072b1984fe628f0595094839f763);
+        
+    
+            var feature_group_23c72b493522b75e15e845d5146c9e5b = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_73f32f2b5821750f0cbb89314e0d95e7 = L.circleMarker(
+                [51.552647, 5.637785],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_445159528b1f18dbdedd5b2bf6e41a47 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7e90762354551811dd5bed2606875eff = $(`<div id="html_7e90762354551811dd5bed2606875eff" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 7<br>             <b>Coördinaat:</b> 51.552647, 5.637785<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> De Blauwe Poort<br>             <b>Gemeente(n):</b> Beek en Donk             </div>`)[0];
+                popup_445159528b1f18dbdedd5b2bf6e41a47.setContent(html_7e90762354551811dd5bed2606875eff);
+            
+        
+
+        circle_marker_73f32f2b5821750f0cbb89314e0d95e7.bindPopup(popup_445159528b1f18dbdedd5b2bf6e41a47)
+        ;
+
+        
+    
+    
+            circle_marker_73f32f2b5821750f0cbb89314e0d95e7.bindTooltip(
+                `<div>
+                     Aa en Maas | n=7 | 51.55265, 5.63779
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60ab4e72a82aa43e150f3016f4be3b35 = L.circleMarker(
+                [51.553287, 5.639496],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_bf8b6613ba3293635020759838ef68e1 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5b86f9af4b1a67f379a55bd7df80f029 = $(`<div id="html_5b86f9af4b1a67f379a55bd7df80f029" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 5<br>             <b>Coördinaat:</b> 51.553287, 5.639496<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Boerdonkse Aa<br>             <b>Gemeente(n):</b> Beek en Donk             </div>`)[0];
+                popup_bf8b6613ba3293635020759838ef68e1.setContent(html_5b86f9af4b1a67f379a55bd7df80f029);
+            
+        
+
+        circle_marker_60ab4e72a82aa43e150f3016f4be3b35.bindPopup(popup_bf8b6613ba3293635020759838ef68e1)
+        ;
+
+        
+    
+    
+            circle_marker_60ab4e72a82aa43e150f3016f4be3b35.bindTooltip(
+                `<div>
+                     Aa en Maas | n=5 | 51.55329, 5.63950
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dc8fb9b0460006180b6a2531eb08c20a = L.circleMarker(
+                [51.555461, 5.641086],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.8, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_2cd6bea10f0d2c17f0cb0fb2fb3ed279 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b9f0b72b607afcfe8a211e3f1370e8dd = $(`<div id="html_b9f0b72b607afcfe8a211e3f1370e8dd" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 4<br>             <b>Coördinaat:</b> 51.555461, 5.641086<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Boerdonkse Aa<br>             <b>Gemeente(n):</b> Beek en Donk             </div>`)[0];
+                popup_2cd6bea10f0d2c17f0cb0fb2fb3ed279.setContent(html_b9f0b72b607afcfe8a211e3f1370e8dd);
+            
+        
+
+        circle_marker_dc8fb9b0460006180b6a2531eb08c20a.bindPopup(popup_2cd6bea10f0d2c17f0cb0fb2fb3ed279)
+        ;
+
+        
+    
+    
+            circle_marker_dc8fb9b0460006180b6a2531eb08c20a.bindTooltip(
+                `<div>
+                     Aa en Maas | n=4 | 51.55546, 5.64109
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1207ce085b220b9cc029149d47e0bbfc = L.circleMarker(
+                [51.62433, 5.40448],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_6ceb9afc716ac57ff2c436399ff80aef = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_de050d6ceb352412d2f872fe732fbf47 = $(`<div id="html_de050d6ceb352412d2f872fe732fbf47" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 2<br>             <b>Coördinaat:</b> 51.624330, 5.404480<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Schijndelse Loop<br>             <b>Gemeente(n):</b> Schijndel             </div>`)[0];
+                popup_6ceb9afc716ac57ff2c436399ff80aef.setContent(html_de050d6ceb352412d2f872fe732fbf47);
+            
+        
+
+        circle_marker_1207ce085b220b9cc029149d47e0bbfc.bindPopup(popup_6ceb9afc716ac57ff2c436399ff80aef)
+        ;
+
+        
+    
+    
+            circle_marker_1207ce085b220b9cc029149d47e0bbfc.bindTooltip(
+                `<div>
+                     Aa en Maas | n=2 | 51.62433, 5.40448
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4013d6a2d15196481e9ddb83f3ba135c = L.circleMarker(
+                [51.62865, 5.40312],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_5c156fc8819f400c02cc80e0c3a92e0f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_d86598c6caf61eb039cbb9d893460acc = $(`<div id="html_d86598c6caf61eb039cbb9d893460acc" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 2<br>             <b>Coördinaat:</b> 51.628650, 5.403120<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Schijndelse Loop<br>             <b>Gemeente(n):</b> Schijndel             </div>`)[0];
+                popup_5c156fc8819f400c02cc80e0c3a92e0f.setContent(html_d86598c6caf61eb039cbb9d893460acc);
+            
+        
+
+        circle_marker_4013d6a2d15196481e9ddb83f3ba135c.bindPopup(popup_5c156fc8819f400c02cc80e0c3a92e0f)
+        ;
+
+        
+    
+    
+            circle_marker_4013d6a2d15196481e9ddb83f3ba135c.bindTooltip(
+                `<div>
+                     Aa en Maas | n=2 | 51.62865, 5.40312
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_40dea14ae8afc1d4f84cf5f09c3f3fab = L.circleMarker(
+                [51.639813, 5.290581],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_abcebde3a6c8563297584117aa3126f3 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_875d641fd953fa3ca745bb84b68edd3c = $(`<div id="html_875d641fd953fa3ca745bb84b68edd3c" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 7<br>             <b>Coördinaat:</b> 51.639813, 5.290581<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> De Kwebben<br>             <b>Gemeente(n):</b> Vught             </div>`)[0];
+                popup_abcebde3a6c8563297584117aa3126f3.setContent(html_875d641fd953fa3ca745bb84b68edd3c);
+            
+        
+
+        circle_marker_40dea14ae8afc1d4f84cf5f09c3f3fab.bindPopup(popup_abcebde3a6c8563297584117aa3126f3)
+        ;
+
+        
+    
+    
+            circle_marker_40dea14ae8afc1d4f84cf5f09c3f3fab.bindTooltip(
+                `<div>
+                     Aa en Maas | n=7 | 51.63981, 5.29058
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0f5ad82d0d28e67ea0069e618fb02bb2 = L.circleMarker(
+                [51.639999, 5.292349],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_e4b6d59621ee7dc7bf5823748b60d452 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0121f9e040f2a6cb5fc098e35587d488 = $(`<div id="html_0121f9e040f2a6cb5fc098e35587d488" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 8<br>             <b>Coördinaat:</b> 51.639999, 5.292349<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> De Kwebben<br>             <b>Gemeente(n):</b> Vught             </div>`)[0];
+                popup_e4b6d59621ee7dc7bf5823748b60d452.setContent(html_0121f9e040f2a6cb5fc098e35587d488);
+            
+        
+
+        circle_marker_0f5ad82d0d28e67ea0069e618fb02bb2.bindPopup(popup_e4b6d59621ee7dc7bf5823748b60d452)
+        ;
+
+        
+    
+    
+            circle_marker_0f5ad82d0d28e67ea0069e618fb02bb2.bindTooltip(
+                `<div>
+                     Aa en Maas | n=8 | 51.64000, 5.29235
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0407c575a729f99694e5706d9630696f = L.circleMarker(
+                [51.676859, 5.301989],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_e5b390dc280e62f68e799b65cbe2fb34 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_bc0ebc14bb714d54b35efc2cde403c02 = $(`<div id="html_bc0ebc14bb714d54b35efc2cde403c02" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 3<br>             <b>Coördinaat:</b> 51.676859, 5.301989<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Bosche Broek<br>             <b>Gemeente(n):</b> Den Bosch             </div>`)[0];
+                popup_e5b390dc280e62f68e799b65cbe2fb34.setContent(html_bc0ebc14bb714d54b35efc2cde403c02);
+            
+        
+
+        circle_marker_0407c575a729f99694e5706d9630696f.bindPopup(popup_e5b390dc280e62f68e799b65cbe2fb34)
+        ;
+
+        
+    
+    
+            circle_marker_0407c575a729f99694e5706d9630696f.bindTooltip(
+                `<div>
+                     Aa en Maas | n=3 | 51.67686, 5.30199
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2c2b5e30970210eb3ef00b645bcb0904 = L.circleMarker(
+                [51.678176, 5.311016],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_80349bde7a498d133bc15b305dfb90ad = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_7b56b678626e69f7ec7cc3cddfa76226 = $(`<div id="html_7b56b678626e69f7ec7cc3cddfa76226" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 1<br>             <b>Coördinaat:</b> 51.678176, 5.311016<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Bosche Broek<br>             <b>Gemeente(n):</b> Den Bosch             </div>`)[0];
+                popup_80349bde7a498d133bc15b305dfb90ad.setContent(html_7b56b678626e69f7ec7cc3cddfa76226);
+            
+        
+
+        circle_marker_2c2b5e30970210eb3ef00b645bcb0904.bindPopup(popup_80349bde7a498d133bc15b305dfb90ad)
+        ;
+
+        
+    
+    
+            circle_marker_2c2b5e30970210eb3ef00b645bcb0904.bindTooltip(
+                `<div>
+                     Aa en Maas | n=1 | 51.67818, 5.31102
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_718f758f2f30ff8edf0cd5d7a7d3c7c1 = L.circleMarker(
+                [51.679499, 5.308135],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_761959ddb13d76a87a29578aecbf599f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_0d9d32a683dfd1e4bf405f327fc65576 = $(`<div id="html_0d9d32a683dfd1e4bf405f327fc65576" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 2<br>             <b>Coördinaat:</b> 51.679499, 5.308135<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Bosche Broek<br>             <b>Gemeente(n):</b> Den Bosch             </div>`)[0];
+                popup_761959ddb13d76a87a29578aecbf599f.setContent(html_0d9d32a683dfd1e4bf405f327fc65576);
+            
+        
+
+        circle_marker_718f758f2f30ff8edf0cd5d7a7d3c7c1.bindPopup(popup_761959ddb13d76a87a29578aecbf599f)
+        ;
+
+        
+    
+    
+            circle_marker_718f758f2f30ff8edf0cd5d7a7d3c7c1.bindTooltip(
+                `<div>
+                     Aa en Maas | n=2 | 51.67950, 5.30814
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd52be0d7d99aa5909083685683c430d = L.circleMarker(
+                [51.6808, 5.28303],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 15.799999999999999, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_feedc4d65ce522304ebd1e4473f194f4 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_da84917395ae87904d098c1d8e116993 = $(`<div id="html_da84917395ae87904d098c1d8e116993" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 9<br>             <b>Coördinaat:</b> 51.680800, 5.283030<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Vlijmens Ven, Moerputten, en Bossche Broek<br>             <b>Gemeente(n):</b> Den Bosch             </div>`)[0];
+                popup_feedc4d65ce522304ebd1e4473f194f4.setContent(html_da84917395ae87904d098c1d8e116993);
+            
+        
+
+        circle_marker_dd52be0d7d99aa5909083685683c430d.bindPopup(popup_feedc4d65ce522304ebd1e4473f194f4)
+        ;
+
+        
+    
+    
+            circle_marker_dd52be0d7d99aa5909083685683c430d.bindTooltip(
+                `<div>
+                     Aa en Maas | n=9 | 51.68080, 5.28303
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a974fe37714341c46df2b408e44d5c43 = L.circleMarker(
+                [51.68256, 5.24656],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_03b7ef9fa0575349b1055b490d27ed1f = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_81dc15ec1788f7ee4b3e2a5d0fe297ea = $(`<div id="html_81dc15ec1788f7ee4b3e2a5d0fe297ea" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 12<br>             <b>Coördinaat:</b> 51.682560, 5.246560<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Moerputten, Deutersestraat<br>             <b>Gemeente(n):</b> Vught             </div>`)[0];
+                popup_03b7ef9fa0575349b1055b490d27ed1f.setContent(html_81dc15ec1788f7ee4b3e2a5d0fe297ea);
+            
+        
+
+        circle_marker_a974fe37714341c46df2b408e44d5c43.bindPopup(popup_03b7ef9fa0575349b1055b490d27ed1f)
+        ;
+
+        
+    
+    
+            circle_marker_a974fe37714341c46df2b408e44d5c43.bindTooltip(
+                `<div>
+                     Aa en Maas | n=12 | 51.68256, 5.24656
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1681fd787e15faea6fb411c5953120ac = L.circleMarker(
+                [51.69098, 5.24023],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_5bdf1790f9581df1fe98fa6881870f49 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_bc221e5ebfab69c1c46577989e1f5fa2 = $(`<div id="html_bc221e5ebfab69c1c46577989e1f5fa2" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 14<br>             <b>Coördinaat:</b> 51.690980, 5.240230<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Moerputten, Moerputtenweg<br>             <b>Gemeente(n):</b> Den Bosch             </div>`)[0];
+                popup_5bdf1790f9581df1fe98fa6881870f49.setContent(html_bc221e5ebfab69c1c46577989e1f5fa2);
+            
+        
+
+        circle_marker_1681fd787e15faea6fb411c5953120ac.bindPopup(popup_5bdf1790f9581df1fe98fa6881870f49)
+        ;
+
+        
+    
+    
+            circle_marker_1681fd787e15faea6fb411c5953120ac.bindTooltip(
+                `<div>
+                     Aa en Maas | n=14 | 51.69098, 5.24023
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3cf96f39e7c52afad6b69df829cc1a91 = L.circleMarker(
+                [51.691592, 5.387221],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_5cf04ec5558052f533b62f0adadd6066 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_f6247e1906d78a73e2ce3200dc18d51a = $(`<div id="html_f6247e1906d78a73e2ce3200dc18d51a" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 1<br>             <b>Coördinaat:</b> 51.691592, 5.387221<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Wambergse Beek<br>             <b>Gemeente(n):</b> Berlicum             </div>`)[0];
+                popup_5cf04ec5558052f533b62f0adadd6066.setContent(html_f6247e1906d78a73e2ce3200dc18d51a);
+            
+        
+
+        circle_marker_3cf96f39e7c52afad6b69df829cc1a91.bindPopup(popup_5cf04ec5558052f533b62f0adadd6066)
+        ;
+
+        
+    
+    
+            circle_marker_3cf96f39e7c52afad6b69df829cc1a91.bindTooltip(
+                `<div>
+                     Aa en Maas | n=1 | 51.69159, 5.38722
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7638c9ed653aa15ecad7d0599cec4f33 = L.circleMarker(
+                [51.76972, 5.41425],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_2833927155ee84580914688c2a1c9217 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_5ff1c9939b84c1838260b07028180376 = $(`<div id="html_5ff1c9939b84c1838260b07028180376" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 3<br>             <b>Coördinaat:</b> 51.769720, 5.414250<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Kesselse Weg, SBB<br>             <b>Gemeente(n):</b> Maren-Kessel             </div>`)[0];
+                popup_2833927155ee84580914688c2a1c9217.setContent(html_5ff1c9939b84c1838260b07028180376);
+            
+        
+
+        circle_marker_7638c9ed653aa15ecad7d0599cec4f33.bindPopup(popup_2833927155ee84580914688c2a1c9217)
+        ;
+
+        
+    
+    
+            circle_marker_7638c9ed653aa15ecad7d0599cec4f33.bindTooltip(
+                `<div>
+                     Aa en Maas | n=3 | 51.76972, 5.41425
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2089488f848dfbff83189815c95d694c = L.circleMarker(
+                [51.77001, 5.41219],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2b6cb0", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_23c72b493522b75e15e845d5146c9e5b);
+        
+    
+        var popup_ea7e56c26632e4cf447cee12fc31f366 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b7ebdc416e8d5608f7d363cfb87cfd23 = $(`<div id="html_b7ebdc416e8d5608f7d363cfb87cfd23" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> Aa en Maas<br>             <b>n:</b> 7<br>             <b>Coördinaat:</b> 51.770010, 5.412190<br>             <b>Werkblad(en):</b> Mfossilis_AenM<br>             <b>Locatie(s):</b> Kesselse Weg, SBB<br>             <b>Gemeente(n):</b> Maren-Kessel             </div>`)[0];
+                popup_ea7e56c26632e4cf447cee12fc31f366.setContent(html_b7ebdc416e8d5608f7d363cfb87cfd23);
+            
+        
+
+        circle_marker_2089488f848dfbff83189815c95d694c.bindPopup(popup_ea7e56c26632e4cf447cee12fc31f366)
+        ;
+
+        
+    
+    
+            circle_marker_2089488f848dfbff83189815c95d694c.bindTooltip(
+                `<div>
+                     Aa en Maas | n=7 | 51.77001, 5.41219
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_23c72b493522b75e15e845d5146c9e5b.addTo(map_25b6072b1984fe628f0595094839f763);
+        
+    
+            var feature_group_2ffdf578b616ceb47c6fd63897225a31 = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_aa9b4c58cb333c53ffcbfc47d61fa6c0 = L.circleMarker(
+                [50.76816, 4.33312],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f855a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 19.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_2ffdf578b616ceb47c6fd63897225a31);
+        
+    
+        var popup_742f5d5cb621e0f4414a40b2c792fdf2 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_59e744c7d5cc1b3cb32678540a2c1fa4 = $(`<div id="html_59e744c7d5cc1b3cb32678540a2c1fa4" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> INBO<br>             <b>n:</b> 16<br>             <b>Coördinaat:</b> 50.768160, 4.333120<br>             <b>Werkblad(en):</b> Mfossilis_Linkebeek<br>             <b>Locatie(s):</b> INBO hatchery<br>             <b>Gemeente(n):</b> Linkebeek             </div>`)[0];
+                popup_742f5d5cb621e0f4414a40b2c792fdf2.setContent(html_59e744c7d5cc1b3cb32678540a2c1fa4);
+            
+        
+
+        circle_marker_aa9b4c58cb333c53ffcbfc47d61fa6c0.bindPopup(popup_742f5d5cb621e0f4414a40b2c792fdf2)
+        ;
+
+        
+    
+    
+            circle_marker_aa9b4c58cb333c53ffcbfc47d61fa6c0.bindTooltip(
+                `<div>
+                     INBO | n=16 | 50.76816, 4.33312
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d50e802d29921c9573fe514d2425cce5 = L.circleMarker(
+                [50.95910024, 5.287285059],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f855a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1}
+            ).addTo(feature_group_2ffdf578b616ceb47c6fd63897225a31);
+        
+    
+        var popup_f80eeb3f2508d80d915956334e802225 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_6caf60c186c7c4e4cb7de2a21ed75198 = $(`<div id="html_6caf60c186c7c4e4cb7de2a21ed75198" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> INBO<br>             <b>n:</b> 1<br>             <b>Coördinaat:</b> 50.959100, 5.287285<br>             <b>Werkblad(en):</b> Mfossilis_INBO<br>             <b>Locatie(s):</b> Hasselt Herkenrode<br>             <b>Gemeente(n):</b> -             </div>`)[0];
+                popup_f80eeb3f2508d80d915956334e802225.setContent(html_6caf60c186c7c4e4cb7de2a21ed75198);
+            
+        
+
+        circle_marker_d50e802d29921c9573fe514d2425cce5.bindPopup(popup_f80eeb3f2508d80d915956334e802225)
+        ;
+
+        
+    
+    
+            circle_marker_d50e802d29921c9573fe514d2425cce5.bindTooltip(
+                `<div>
+                     INBO | n=1 | 50.95910, 5.28729
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e91ca94cc25a20e828771b875ab285f2 = L.circleMarker(
+                [50.95945226, 5.285953911],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f855a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_2ffdf578b616ceb47c6fd63897225a31);
+        
+    
+        var popup_73bd24f98cf678cc55f4fb4948067817 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_46a5e3593a07a8fb23e21af1c1354786 = $(`<div id="html_46a5e3593a07a8fb23e21af1c1354786" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> INBO<br>             <b>n:</b> 3<br>             <b>Coördinaat:</b> 50.959452, 5.285954<br>             <b>Werkblad(en):</b> Mfossilis_INBO<br>             <b>Locatie(s):</b> Abdij Herkenrode<br>             <b>Gemeente(n):</b> -             </div>`)[0];
+                popup_73bd24f98cf678cc55f4fb4948067817.setContent(html_46a5e3593a07a8fb23e21af1c1354786);
+            
+        
+
+        circle_marker_e91ca94cc25a20e828771b875ab285f2.bindPopup(popup_73bd24f98cf678cc55f4fb4948067817)
+        ;
+
+        
+    
+    
+            circle_marker_e91ca94cc25a20e828771b875ab285f2.bindTooltip(
+                `<div>
+                     INBO | n=3 | 50.95945, 5.28595
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bd57c66affaff0b4e90a66d27f0fa846 = L.circleMarker(
+                [50.95955498, 5.287763715],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f855a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.2, "stroke": true, "weight": 1}
+            ).addTo(feature_group_2ffdf578b616ceb47c6fd63897225a31);
+        
+    
+        var popup_60f86444d0b3729e9c17fba435b53797 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_160d795459c0bdb243a25058bdff1bd5 = $(`<div id="html_160d795459c0bdb243a25058bdff1bd5" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> INBO<br>             <b>n:</b> 1<br>             <b>Coördinaat:</b> 50.959555, 5.287764<br>             <b>Werkblad(en):</b> Mfossilis_INBO<br>             <b>Locatie(s):</b> Abdij Herkenrode<br>             <b>Gemeente(n):</b> -             </div>`)[0];
+                popup_60f86444d0b3729e9c17fba435b53797.setContent(html_160d795459c0bdb243a25058bdff1bd5);
+            
+        
+
+        circle_marker_bd57c66affaff0b4e90a66d27f0fa846.bindPopup(popup_60f86444d0b3729e9c17fba435b53797)
+        ;
+
+        
+    
+    
+            circle_marker_bd57c66affaff0b4e90a66d27f0fa846.bindTooltip(
+                `<div>
+                     INBO | n=1 | 50.95955, 5.28776
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f9ff583cc0645942172182b391cab705 = L.circleMarker(
+                [50.95956197, 5.288020075],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f855a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_2ffdf578b616ceb47c6fd63897225a31);
+        
+    
+        var popup_5b2ba834adc47fbf6a2a010fcad558f8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_64d6de4a313e194f7e785e0154b37e71 = $(`<div id="html_64d6de4a313e194f7e785e0154b37e71" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> INBO<br>             <b>n:</b> 10<br>             <b>Coördinaat:</b> 50.959562, 5.288020<br>             <b>Werkblad(en):</b> Mfossilis_INBO<br>             <b>Locatie(s):</b> Abdij Herkenrode; Hasselt Herkenrode; Herkenrode; Kuringen<br>             <b>Gemeente(n):</b> -             </div>`)[0];
+                popup_5b2ba834adc47fbf6a2a010fcad558f8.setContent(html_64d6de4a313e194f7e785e0154b37e71);
+            
+        
+
+        circle_marker_f9ff583cc0645942172182b391cab705.bindPopup(popup_5b2ba834adc47fbf6a2a010fcad558f8)
+        ;
+
+        
+    
+    
+            circle_marker_f9ff583cc0645942172182b391cab705.bindTooltip(
+                `<div>
+                     INBO | n=10 | 50.95956, 5.28802
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f5c049a6584eddc0f801c19209e56678 = L.circleMarker(
+                [51.16428906, 5.739456456],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f855a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_2ffdf578b616ceb47c6fd63897225a31);
+        
+    
+        var popup_323e2b3fa6e725030e5e9a28fcc2ad92 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_c769d0977c82a7311dadd67d408bad0f = $(`<div id="html_c769d0977c82a7311dadd67d408bad0f" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> INBO<br>             <b>n:</b> 5<br>             <b>Coördinaat:</b> 51.164289, 5.739456<br>             <b>Werkblad(en):</b> Mfossilis_INBO<br>             <b>Locatie(s):</b> Molenbeersel<br>             <b>Gemeente(n):</b> -             </div>`)[0];
+                popup_323e2b3fa6e725030e5e9a28fcc2ad92.setContent(html_c769d0977c82a7311dadd67d408bad0f);
+            
+        
+
+        circle_marker_f5c049a6584eddc0f801c19209e56678.bindPopup(popup_323e2b3fa6e725030e5e9a28fcc2ad92)
+        ;
+
+        
+    
+    
+            circle_marker_f5c049a6584eddc0f801c19209e56678.bindTooltip(
+                `<div>
+                     INBO | n=5 | 51.16429, 5.73946
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f47c3fbdc4f1ece8667da9c7cf905660 = L.circleMarker(
+                [51.1700338, 5.701773006],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f855a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_2ffdf578b616ceb47c6fd63897225a31);
+        
+    
+        var popup_8d9b2f4586f6f72f6368c46b1fec1e35 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_dd20fe1774f28ef0b30f53dd99b59454 = $(`<div id="html_dd20fe1774f28ef0b30f53dd99b59454" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> INBO<br>             <b>n:</b> 5<br>             <b>Coördinaat:</b> 51.170034, 5.701773<br>             <b>Werkblad(en):</b> Mfossilis_INBO<br>             <b>Locatie(s):</b> Kinrooi Lossing<br>             <b>Gemeente(n):</b> -             </div>`)[0];
+                popup_8d9b2f4586f6f72f6368c46b1fec1e35.setContent(html_dd20fe1774f28ef0b30f53dd99b59454);
+            
+        
+
+        circle_marker_f47c3fbdc4f1ece8667da9c7cf905660.bindPopup(popup_8d9b2f4586f6f72f6368c46b1fec1e35)
+        ;
+
+        
+    
+    
+            circle_marker_f47c3fbdc4f1ece8667da9c7cf905660.bindTooltip(
+                `<div>
+                     INBO | n=5 | 51.17003, 5.70177
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ad72dde64451a99c50adefa8f8065362 = L.circleMarker(
+                [51.32353499, 5.11775997],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f855a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.4, "stroke": true, "weight": 1}
+            ).addTo(feature_group_2ffdf578b616ceb47c6fd63897225a31);
+        
+    
+        var popup_51378bab7ba4282c600d77bcd8482778 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_27cf66cbddebd410e817d27045018de0 = $(`<div id="html_27cf66cbddebd410e817d27045018de0" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> INBO<br>             <b>n:</b> 2<br>             <b>Coördinaat:</b> 51.323535, 5.117760<br>             <b>Werkblad(en):</b> Mfossilis_INBO<br>             <b>Locatie(s):</b> Arendonk Wamp<br>             <b>Gemeente(n):</b> -             </div>`)[0];
+                popup_51378bab7ba4282c600d77bcd8482778.setContent(html_27cf66cbddebd410e817d27045018de0);
+            
+        
+
+        circle_marker_ad72dde64451a99c50adefa8f8065362.bindPopup(popup_51378bab7ba4282c600d77bcd8482778)
+        ;
+
+        
+    
+    
+            circle_marker_ad72dde64451a99c50adefa8f8065362.bindTooltip(
+                `<div>
+                     INBO | n=2 | 51.32353, 5.11776
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a068c7e3aae76c723a0907575b796a79 = L.circleMarker(
+                [51.32524677, 5.112852495],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f855a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 11.0, "stroke": true, "weight": 1}
+            ).addTo(feature_group_2ffdf578b616ceb47c6fd63897225a31);
+        
+    
+        var popup_9bbf79fb7e5ce37d686a5535d85a23e8 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_b39c7b51e7d17a71c3dc512420057be2 = $(`<div id="html_b39c7b51e7d17a71c3dc512420057be2" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> INBO<br>             <b>n:</b> 5<br>             <b>Coördinaat:</b> 51.325247, 5.112852<br>             <b>Werkblad(en):</b> Mfossilis_INBO<br>             <b>Locatie(s):</b> Arendonk Goorken<br>             <b>Gemeente(n):</b> -             </div>`)[0];
+                popup_9bbf79fb7e5ce37d686a5535d85a23e8.setContent(html_b39c7b51e7d17a71c3dc512420057be2);
+            
+        
+
+        circle_marker_a068c7e3aae76c723a0907575b796a79.bindPopup(popup_9bbf79fb7e5ce37d686a5535d85a23e8)
+        ;
+
+        
+    
+    
+            circle_marker_a068c7e3aae76c723a0907575b796a79.bindTooltip(
+                `<div>
+                     INBO | n=5 | 51.32525, 5.11285
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a75acb3f3ba5d1594201441a59e63590 = L.circleMarker(
+                [51.32620302, 5.118003818],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2f855a", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14.6, "stroke": true, "weight": 1}
+            ).addTo(feature_group_2ffdf578b616ceb47c6fd63897225a31);
+        
+    
+        var popup_a5df2700a8332da792df8f2a2d2bf468 = L.popup({
+  "maxWidth": 350,
+});
+
+        
+            
+                var html_76308708630eee1fd64bb8544bcd0c1b = $(`<div id="html_76308708630eee1fd64bb8544bcd0c1b" style="width: 100.0%; height: 100.0%;">             <b>Groep:</b> INBO<br>             <b>n:</b> 8<br>             <b>Coördinaat:</b> 51.326203, 5.118004<br>             <b>Werkblad(en):</b> Mfossilis_INBO<br>             <b>Locatie(s):</b> Arendonk Goorken<br>             <b>Gemeente(n):</b> -             </div>`)[0];
+                popup_a5df2700a8332da792df8f2a2d2bf468.setContent(html_76308708630eee1fd64bb8544bcd0c1b);
+            
+        
+
+        circle_marker_a75acb3f3ba5d1594201441a59e63590.bindPopup(popup_a5df2700a8332da792df8f2a2d2bf468)
+        ;
+
+        
+    
+    
+            circle_marker_a75acb3f3ba5d1594201441a59e63590.bindTooltip(
+                `<div>
+                     INBO | n=8 | 51.32620, 5.11800
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_2ffdf578b616ceb47c6fd63897225a31.addTo(map_25b6072b1984fe628f0595094839f763);
+        
+    
+            map_25b6072b1984fe628f0595094839f763.fitBounds(
+                [[50.76816, 4.33312], [52.68681, 6.74161]],
+                {"padding": [20, 20]}
+            );
+        
+    
+            var tile_layer_eab11c409d62a3834ec804a28bdb7140 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            var layer_control_8ec23d85ed530af46043f09fc3149b70_layers = {
+                base_layers : {
+                    "OpenStreetMap" : tile_layer_d1e648f6dafa81e14f08dbb4b8afcb34,
+                    "CartoDB Voyager" : tile_layer_eab11c409d62a3834ec804a28bdb7140,
+                },
+                overlays :  {
+                    "RAVON" : feature_group_49df0a0ef6513bde506554fcdb18dafb,
+                    "Aa en Maas" : feature_group_23c72b493522b75e15e845d5146c9e5b,
+                    "INBO" : feature_group_2ffdf578b616ceb47c6fd63897225a31,
+                },
+            };
+            let layer_control_8ec23d85ed530af46043f09fc3149b70 = L.control.layers(
+                layer_control_8ec23d85ed530af46043f09fc3149b70_layers.base_layers,
+                layer_control_8ec23d85ed530af46043f09fc3149b70_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_25b6072b1984fe628f0595094839f763);
+
+        
+    
+            tile_layer_d1e648f6dafa81e14f08dbb4b8afcb34.addTo(map_25b6072b1984fe628f0595094839f763);
+        
+    
+            feature_group_49df0a0ef6513bde506554fcdb18dafb.addTo(map_25b6072b1984fe628f0595094839f763);
+        
+    
+            feature_group_23c72b493522b75e15e845d5146c9e5b.addTo(map_25b6072b1984fe628f0595094839f763);
+        
+    
+            feature_group_2ffdf578b616ceb47c6fd63897225a31.addTo(map_25b6072b1984fe628f0595094839f763);
+        
+</script>
+</html>
